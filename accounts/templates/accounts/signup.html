@@ -1,64 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
+{% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="logo.webp" type="image/icon type">
-    <link rel="stylesheet" href="signup.css">
-    <title>GoodREADS | Join</title>
-</head>
+{% block content %}
+<!-- Sign Up Section -->
+<form action="">
+    <div class="signup_div">
+        <h2 id="text_center">Create Account</h2>
+        <p>Please fill in this form to create an account.</p>
+        <hr>
+        <label for="first_name"><b>First Name</b></label>
+        <input type="text" placeholder="Enter First Name" name="first_name" required>
 
-<body>
-    <header>
-        <!--Navbar-->
-        <h1>Good<span>READS</span></h1>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">My Books</a></li>
-                <li><a href="#">Authors</a></li>
-                <li><a href="#">Search</a></li>
-                <li><a href="#">Log In</a></li>
-                <li><a class="active_link" href="#">Join</a></li>
-            </ul>
-        </nav>
-    </header>
-    <!--Added a line break to adjust width of grid container-->
+        <label for="last_name"><b>Last Name</b></label>
+        <input type="text" placeholder="Enter Last Name" name="last_name" required>
 
-    <!-- Sign Up Section -->
-    <form action="">
-        <div class="signup_div">
-            <h2 id="text_center">Create Account</h2>
-            <p>Please fill in this form to create an account.</p>
-            <hr>
-            <label for="first_name"><b>First Name</b></label>
-            <input type="text" placeholder="Enter First Name" name="first_name" required>
+        <label for="username"><b>Username</b></label>
+        <input type="text" placeholder="Enter Userame" name="username" required>
 
-            <label for="last_name"><b>Last Name</b></label>
-            <input type="text" placeholder="Enter Last Name" name="last_name" required>
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
 
-            <label for="username"><b>Username</b></label>
-            <input type="text" placeholder="Enter Userame" name="username" required>
+        <label for="psw-repeat"><b>Repeat Password</b></label>
+        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
 
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
-
-            <label for="psw-repeat"><b>Repeat Password</b></label>
-            <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-
-            <div class="clearfix">
-                <button type="button" class="cancelbtn">Cancel</button>
-                <button type="submit" class="submitbtn">Create</button>
-            </div>
+        <div class="clearfix">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <button type="submit" class="submitbtn">Create</button>
         </div>
-    </form>
-
-    <!--Footer-->
-    <footer>
-        <p>&copy; 2020 Alpha. All rights reserved.</p>
-    </footer>
-</body>
-
-</html>
+    </div>
+</form>
+{% endblock content %}

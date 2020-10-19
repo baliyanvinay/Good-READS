@@ -1,54 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
+{% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="logo.webp" type="image/icon type">
-    <link rel="stylesheet" href="signup.css">
-    <title>GoodREADS | Login</title>
-</head>
+{% block content %}
+<!-- Login Section -->
+<form action="">
+    <div class="signup_div">
 
-<body>
-    <header>
-        <!--Navbar-->
-        <h1>Good<span>READS</span></h1>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">My Books</a></li>
-                <li><a href="#">Authors</a></li>
-                <li><a href="#">Search</a></li>
-                <li><a class="active_link" href="#">Log In</a></li>
-                <li><a href="#">Join</a></li>
-            </ul>
-        </nav>
-    </header>
-    <br>
-    <!--Added a line break to adjust width of grid container-->
+        <label for="username"><b>Username</b></label>
+        <input type="text" placeholder="Enter Userame" name="username" required>
 
-    <!-- Login Section -->
-    <form action="">
-        <div class="signup_div">
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
 
-            <label for="username"><b>Username</b></label>
-            <input type="text" placeholder="Enter Userame" name="username" required>
-
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
-
-            <div class="clearfix">
-                <button type="button" class="cancelbtn">Cancel</button>
-                <button type="submit" class="submitbtn">Sign In</button>
-            </div>
+        <div class="clearfix">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <button type="submit" class="submitbtn">Sign In</button>
         </div>
-    </form>
-
-    <!--Footer-->
-    <footer>
-        <p>&copy; 2020 Alpha. All rights reserved.</p>
-    </footer>
-</body>
-
-</html>
+    </div>
+</form>
+{% endblock content %}
