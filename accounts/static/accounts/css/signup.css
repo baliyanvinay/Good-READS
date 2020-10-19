@@ -1,0 +1,42 @@
+input{
+    width: 90%;
+    padding: 15px;
+    margin: 5px 0 5px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+
+hr {
+    border: 1px solid #dfd5d5;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  padding: 5px 5px;
+  margin: 5px 0;
+  border: none;
+  width: 100%;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    background-color: #f44336;
+}
+
+.signup_div {
+    width: 25%; 
+    margin-left: 36%; 
+    margin-top: 1%;
+    background-color: white; 
+    padding: 8px;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+#text_center {
+    text-align: center;
+}
