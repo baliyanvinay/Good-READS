@@ -121,3 +121,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # Static root is only required at deployment so no need to set it now
+STATIC_ROOT = 'static'
