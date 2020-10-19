@@ -22,7 +22,8 @@ Book home page to list all the available books. Main css for home.
 
 ## Static File structure
 For each apps, static files resides insides the static/app/ folder. For example, the css files for accounts app shall be available in accounts/static/account/css/signup.css
-'collectstatic' will collect all files from these apps and will put them in project static folder. This is only for deployment but a good practise.
+'collectstatic' will collect all files from these apps and will put them in project static folder. This is only for deployment but a good practise. 
+STATIC_ROOL = 'static', collectstatic will put all static files in here. 
 
 ## Templates File Structure
 For each apps, template files(html) resides insides the templates/app/ folder. Considering the index html file in books app,
