@@ -8,31 +8,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'books/css/style.css' %}">
     <link rel="stylesheet" href="{% static 'accounts/css/signup.css' %}">
+    <link rel="stylesheet" href="{% static 'accounts/css/login.css' %}">
     <link rel="icon" href="{% static 'books/logo/logo.webp' %}" type="image/icon type">
     <title>GoodREADS</title>
 </head>
 
 <body>
-    <header>
-        <!--Navbar-->
-        <h1>Good<span>READS</span></h1>
-        <nav>
-            <ul>
-                <li><a class="active_link" href="{% url 'index' %}">Home</a></li>
-                <li><a href="#">My Books</a></li>
-                <li><a href="#">Authors</a></li>
-                <li><a href="#">Search</a></li>
-                <li><a href="{% url 'login' %}">Log In</a></li>
-                <li><a href="{% url 'join' %}">Join</a></li>
-            </ul>
-        </nav>
-    </header>
-    <br>
-    <!--Added a line break to adjust width of grid container-->
+    <main>
+        <header>
+            <!--Navbar-->
+            <h1>Good<span>READS</span></h1>
+            <nav>
+                <ul>
+                    <li><a class="active_link" href="{% url 'index' %}">Home</a></li>
+                    <li><a href="#">My Books</a></li>
+                    <li><a href="#">Authors</a></li>
+                    <li><a href="#">Search</a></li>
+                    <li><a href="{% url 'login' %}">Log In</a></li>
+                    <li><a href="{% url 'join' %}">Join</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    {% block content %}
-    {% endblock content %}
+        {% block content %}
+        {% endblock content %}
 
+    </main>
     <!--Footer-->
     <footer>
         <p>&copy; 2020 Alpha. All rights reserved.</p>
