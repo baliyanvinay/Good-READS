@@ -1,9 +1,10 @@
 from django.shortcuts import render
+from django.views.generic import TemplateView
 
 
-def login(request):
-    return render(request, 'accounts/login.html')
+class LoginView(TemplateView):
+    template_name = 'accounts/login.html'
 
 
-def join(request):
-    return render(request, 'accounts/signup.html')
+class JoinView(TemplateView):
+    template_name = 'accounts/signup.html'
