@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from django.views.generic import TemplateView
 
 
-def index(request):
-    return render(request, 'books/index.html')
+class IndexView(TemplateView):
+    # Main index page view
+    template_name = 'books/index.html'
