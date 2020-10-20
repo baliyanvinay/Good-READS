@@ -1,3 +1,9 @@
+## Problems: 
+1. CSS Grid is missing some property, does not cover whole page. 
+<p>This has been fixed</p>
+2. Fontsize for the content is too small
+3. Absolute footer position is overlapped by CSS grid when there are more rows. 
+
 # Good-READS
 Breakdown and build up project. To understand the working of Django forms, class based views, handling of static files and settings core functions.
 
