@@ -1,55 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
+{% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="logo.webp" type="image/icon type">
-    <title>GoodREADS</title>
-</head>
+{% block content %}
+<!--Content-->
+<div class="grid-container">
+    <!-- CSS Grid Container -->
+    <div class="grid-item">
+        <img src="goodreads Source/autherImages/Alyssa.jpg" alt="author_image">
+        <h3>Alyssa Cole</h3>
+        <h4>Member since: January 2014</h4>
+        <h5>Twitter: alyssacolelit</h5>
+        <p>Genre: Romance, Historical Fiction, Science Fiction</p>
+    </div>
 
-<body>
-    <header>
-        <!--Navbar-->
-        <h1>Good<span>READS</span></h1>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">My Books</a></li>
-                <li><a class="active_link" href="#">Authors</a></li>
-                <li><a href="#">Search</a></li>
-                <li><a href="#">Log In</a></li>
-                <li><a href="#">Join</a></li>
-            </ul>
-        </nav>
-    </header>
-    <br>
-    <!--Added a line break to adjust width of grid container-->
-
-    <!--Content-->
-    <div class="grid-container">
-        <!-- CSS Grid Container -->
-        <div class="grid-item">
-            <img src="goodreads Source/autherImages/Alyssa.jpg" alt="author_image">
-            <h3>Alyssa Cole</h3>
-            <h4>Member since: January 2014</h4>
-            <h5>Twitter: alyssacolelit</h5>
-            <p>Genre: Romance, Historical Fiction, Science Fiction</p>
-        </div>
-
-        <div class="grid-item">
-            <img src="goodreads Source/autherImages/Stephen.jpg" alt="author_image">
-            <h3>Stephen King</h3>
-            <h4>Member Since: December 2013</h4>
-            <h5>Twitter: </h5>
-            <p>Genre: Horror, Mystery, Literature & Fiction</p>
-        </div>
-
-        <!--Footer-->
-        <footer>
-            <p>&copy; 2020 Alpha. All rights reserved.</p>
-        </footer>
-</body>
-
-</html>
+    <div class="grid-item">
+        <img src="goodreads Source/autherImages/Stephen.jpg" alt="author_image">
+        <h3>Stephen King</h3>
+        <h4>Member Since: December 2013</h4>
+        <h5>Twitter: </h5>
+        <p>Genre: Horror, Mystery, Literature & Fiction</p>
+    </div>
+    {% endblock content %}
