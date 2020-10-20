@@ -2,6 +2,7 @@
 1. CSS Grid is missing some property, does not cover whole page: Fixed
 2. Fontsize for the content is too small: Fixed
 3. Absolute footer position is overlapped by CSS grid when there are more rows: Parked
+4. Header does not highlight the active link; Need to active for the current page.
 
 ## Enhancements:
 1. Authors - Authors shall be registered users but with isAuthor flag set to True; Only the authors shall be displayed on the author page. 
