@@ -15,11 +15,6 @@ Two templates, login and signup with the basic sigin and signup functionality. C
 ### Book_Templates:
 Book home page to list all the available books. Main css for home. 
 
-## Problems: 
-1. CSS Grid is missing some property, does not cover whole page.
-2. Fontsize for the content is too small
-3. Absolute footer position is overlapped by CSS grid when there are more rows. 
-
 ## Static File structure
 For each apps, static files resides insides the static/app/ folder. For example, the css files for accounts app shall be available in accounts/static/account/css/signup.css
 'collectstatic' will collect all files from these apps and will put them in project static folder. This is only for deployment but a good practise. 
