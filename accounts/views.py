@@ -8,3 +8,7 @@ class LoginView(TemplateView):
 
 class JoinView(TemplateView):
     template_name = 'accounts/signup.html'
+
+
+class AuthorsView(TemplateView):
+    template_name = 'accounts/authors.html'
