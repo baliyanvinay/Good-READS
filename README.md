@@ -38,3 +38,19 @@ STATIC_ROOL = 'static', collectstatic will put all static files in here.
 For each apps, template files(html) resides insides the templates/app/ folder. Considering the index html file in books app,
 books/templates/books/index.html
 
+# Model Design
+Book::
+ID
+title
+author(foreign key)
+shelf
+date_added
+ratings
+short_desc
+description
+cover_picture
+genre(Many to Many)
+
+Genre::
+ID
+name
