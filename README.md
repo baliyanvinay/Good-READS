@@ -38,23 +38,22 @@ STATIC_ROOL = 'static', collectstatic will put all static files in here.
 For each apps, template files(html) resides insides the templates/app/ folder. Considering the index html file in books app,
 books/templates/books/index.html
 
-# Model Design
-Book::
-ID
-title
-author(foreign key)
-shelf
-date_added
-ratings
-short_desc
-description
-cover_picture
-genre(Many to Many)
+## Model Design
+### Book
+- title
+- genre(Many-to-Many with Genre)
+- author(foreign key of Accounts)
+- copies
+- date_added
+- ratings
+- short_desc
+- description
+- cover_picture
 
-Genre::
-ID, name
+### Genre
+- name
 
-Accounts::
-is_author
-picture
-user(django built in User model mapped one-to-one)
+### Accounts
+- is_author
+- picture
+- user(One-to-One with django built in User model)
