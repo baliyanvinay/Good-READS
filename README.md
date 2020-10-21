@@ -52,5 +52,9 @@ cover_picture
 genre(Many to Many)
 
 Genre::
-ID
-name
+ID, name
+
+Accounts::
+is_author
+picture
+user(django built in User model mapped one-to-one)
