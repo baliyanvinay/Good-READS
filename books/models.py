@@ -1,5 +1,5 @@
 from django.db import models
-from datetime import date
+from django.utils.timezone import now
 
 from accounts.models import Account
 
@@ -11,7 +11,7 @@ class Genre(models.Model):
 class Book(models.Model):
     '''
     author added as foreign key, if author is deleted, field here in book would be set to NULL
-    By default, 
+    By default,
         genre is added as many to many field relation, a single book can have more than 1 genres
         there will be only one copy of a book available
         date_added set to today for new instance
@@ -22,7 +22,7 @@ class Book(models.Model):
     genre = models.ManyToManyField(Genre)
     author = models.ForeignKey(Account, on_delete=models.SET_NULL, null=True)
     copies = models.IntegerField(default=1)
-    date_added = models.DateField(default=date.today())
+    date_added = models.DateField(default=now)
     ratings = models.DecimalField(max_digits=3, decimal_places=2)
     short_desc = models.TextField(max_length=100)
     description = models.TextField(max_length=500)
@@ -34,6 +34,6 @@ class Book(models.Model):
     def display_genre(self):
         '''
         In case there are more than one genre per book, all the available genres for a book are
-        joined with comma and space. 
+        joined with comma and space.
         '''
         return ', '.join(item.name for item in self.genre.all())
