@@ -56,4 +56,4 @@ books/templates/books/index.html
 ### Accounts
 - is_author
 - picture
-- user(One-to-One with django built in User model)
+- user(AbstractUser)
