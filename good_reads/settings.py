@@ -130,3 +130,6 @@ STATIC_ROOT = 'static'
 # Media files (Images)
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+# Refering the custom user model class
+AUTH_USER_MODEL = 'accounts.Account'
