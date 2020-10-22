@@ -36,4 +36,4 @@ class Book(models.Model):
         In case there are more than one genre per book, all the available genres for a book are
         joined with comma and space. 
         '''
-        pass
+        return ', '.join(item for item in genre)
