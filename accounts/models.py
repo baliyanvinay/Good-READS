@@ -13,4 +13,4 @@ class Account(AbstractUser):
     picture = models.ImageField(upload_to='user_photos/')
 
     def __str__(self):
-        return f"{self.user.last_name}, {self.user.first_name}"
+        return f"{self.last_name}, {self.first_name}"
