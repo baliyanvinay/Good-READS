@@ -15,7 +15,7 @@ class Book(models.Model):
         genre is added as many to many field relation, a single book can have more than 1 genres
         there will be only one copy of a book available
         date_added set to today for new instance
-        ratings shall be displayed upto 2 decimal places
+        ratings shall be displayed upto 2 decimal places & only 3 maximum digits. Largest value: 9.99
         short description will be of 100 character length
     '''
     title = models.CharField(max_length=100)
@@ -23,7 +23,7 @@ class Book(models.Model):
     author = models.ForeignKey(Account, on_delete=models.SET_NULL, null=True)
     copies = models.IntegerField(default=1)
     date_added = models.DateField(default=date.today())
-    ratings = models.DecimalField(decimal_places=2)
+    ratings = models.DecimalField(max_digits=3, decimal_places=2)
     short_desc = models.TextField(max_length=100)
     description = models.TextField(max_length=500)
     cover_picture = models.ImageField(upload_to='book_photos/')
@@ -36,4 +36,4 @@ class Book(models.Model):
         In case there are more than one genre per book, all the available genres for a book are
         joined with comma and space. 
         '''
-        return ', '.join(item for item in self.genre.all())
+        return ', '.join(item.name for item in self.genre.all())
