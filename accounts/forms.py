@@ -13,5 +13,4 @@ class JoinForm(UserCreationForm):
             'first_name': forms.fields.TextInput(attrs={'placeholder': 'Enter First Name'}),
             'last_name': forms.fields.TextInput(attrs={'placeholder': 'Enter Last Name'}),
             'username': forms.fields.TextInput(attrs={'placeholder': 'Enter Username'}),
-            'password1': forms.fields.TextInput(attrs={'placeholder': 'Enter Username'}),
         }
