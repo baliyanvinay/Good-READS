@@ -1,12 +1,17 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, FormView
-from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LoginView, LogoutView
 from accounts.forms import JoinForm
 
 
 class UserLoginView(LoginView):
     template_name = 'accounts/login.html'
+
+
+class UserLogoutView(LogoutView):
+    # Redirected directly to login page once logged out
+    next_page = reverse_lazy('accounts:login')
 
 
 class JoinView(FormView):

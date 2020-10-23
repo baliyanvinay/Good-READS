@@ -1,5 +1,5 @@
 from django.urls import path
-from accounts.views import JoinView, AuthorsView, UserLoginView
+from accounts.views import JoinView, AuthorsView, UserLoginView, UserLogoutView
 
 from django.views.generic import RedirectView
 # RedirectView will redirect url--> www.google.com/accounts/ to www.google.com/accounts/login/
@@ -10,5 +10,5 @@ urlpatterns = [
     path('join/', JoinView.as_view(), name='join'),
     path('authors/', AuthorsView.as_view(), name='authors'),
     path('login/', UserLoginView.as_view(), name='login'),
-    path('logout/', UserLoginView.as_view(), name='logout'),
+    path('logout/', UserLogoutView.as_view(), name='logout'),
 ]
