@@ -14,6 +14,10 @@ class JoinView(FormView):
     success_url = reverse_lazy('accounts:login')
 
     def form_valid(self, form):
+        '''
+        The function will validate form against the model(look for max_length, data type) and
+        save it in the table.
+        '''
         form.save()
         return super().form_valid(form)
 
