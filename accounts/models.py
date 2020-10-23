@@ -11,7 +11,7 @@ class Account(AbstractUser):
     user_permissions, is_staff, is_active, is_superuser, last_login, date_joined
     '''
     is_author = models.BooleanField(default=False)
-    picture = models.ImageField(upload_to='user_photos/')
+    picture = models.ImageField(upload_to='user_photos/', blank=True)
 
     def __str__(self):
         return f"{self.last_name}, {self.first_name}"
