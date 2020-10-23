@@ -1,7 +1,12 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, FormView
+from django.contrib.auth.views import LoginView
 from accounts.forms import JoinForm
+
+
+class UserLoginView(LoginView):
+    template_name = 'accounts/login.html'
 
 
 class JoinView(FormView):
