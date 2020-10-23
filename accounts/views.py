@@ -13,6 +13,10 @@ class JoinView(FormView):
     form_class = JoinForm
     success_url = reverse_lazy('accounts:login')
 
+    def form_valid(self, form):
+        form.save()
+        return super().form_valid(form)
+
 
 class AuthorsView(TemplateView):
     template_name = 'accounts/authors.html'
