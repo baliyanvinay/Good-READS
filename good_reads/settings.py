@@ -133,3 +133,6 @@ MEDIA_URL = '/media/'
 
 # Refering the custom user model class
 AUTH_USER_MODEL = 'accounts.Account'
+
+# LoginView Success URL
+LOGIN_REDIRECT_URL = '/'
