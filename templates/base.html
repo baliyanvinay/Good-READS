@@ -20,12 +20,12 @@
             <h1>Good<span>READS</span></h1>
             <nav>
                 <ul>
-                    <li><a class="active_link" href="{% url 'index' %}">Home</a></li>
+                    <li><a class="active_link" href="{% url 'books:index' %}">Home</a></li>
                     <li><a href="#">My Books</a></li>
-                    <li><a href="{% url 'authors' %}">Authors</a></li>
+                    <li><a href="{% url 'accounts:authors' %}">Authors</a></li>
                     <li><a href="#">Search</a></li>
-                    <li><a href="{% url 'login' %}">Log In</a></li>
-                    <li><a href="{% url 'join' %}">Join</a></li>
+                    <li><a href="{% url 'accounts:login' %}">Log In</a></li>
+                    <li><a href="{% url 'accounts:join' %}">Join</a></li>
                 </ul>
             </nav>
         </header>
