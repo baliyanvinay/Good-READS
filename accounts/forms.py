@@ -6,11 +6,12 @@ from accounts.models import Account
 class JoinForm(UserCreationForm):
     class Meta:
         model = Account
-        fields = '__all__'
-        exclude = ['last_login', 'groups', 'is_active', 'email',
-                   'is_staff', 'user_permissions', 'date_joined', 'is_superuser', 'password']
+        fields = ['first_name', 'last_name',
+                  'username', 'password1', 'password2', 'is_author', 'picture', ]
+        exclude = []
         widgets = {
             'first_name': forms.fields.TextInput(attrs={'placeholder': 'Enter First Name'}),
             'last_name': forms.fields.TextInput(attrs={'placeholder': 'Enter Last Name'}),
             'username': forms.fields.TextInput(attrs={'placeholder': 'Enter Username'}),
+            'password1': forms.fields.TextInput(attrs={'placeholder': 'Enter Username'}),
         }
