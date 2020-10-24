@@ -4,6 +4,7 @@
 3. Absolute footer position is overlapped by CSS grid when there are more rows: Parked
 4. Header does not highlight the active link; Need to active for the current page.
 5. Password fields in Account forms does not display placeholder: No solution found.
+6. Form Invalid validation error does not display any error messages: Parked
 
 ## Enhancements:
 1. Authors - Authors shall be registered users but with isAuthor flag set to True; Only the authors shall be displayed on the author page. 
