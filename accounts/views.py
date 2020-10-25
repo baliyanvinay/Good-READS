@@ -23,6 +23,10 @@ class JoinView(FormView):
         The function will validate form against the model(look for max_length, data type) and
         save it in the table.
         '''
+        if form.cleaned_data.get('picture'):
+            print('Image file')
+        else:
+            print('Error')
         form.save()
         return super().form_valid(form)
 
