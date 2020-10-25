@@ -1,7 +1,8 @@
 from django.urls import reverse_lazy
-from django.views.generic import TemplateView, FormView
+from django.views.generic import TemplateView, FormView, ListView
 from django.contrib.auth.views import LoginView, LogoutView
 from accounts.forms import JoinForm
+from accounts.models import Account
 
 
 class UserLoginView(LoginView):
@@ -27,5 +28,10 @@ class JoinView(FormView):
         return super().form_valid(form)
 
 
-class AuthorsView(TemplateView):
+class AuthorsView(ListView):
+    model = Account
     template_name = 'accounts/authors.html'
+
+    def get_queryset(self):
+        # only getting the users where author flag is set to True
+        return Account.objects.filter(is_author=True)

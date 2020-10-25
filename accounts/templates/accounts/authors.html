@@ -5,19 +5,13 @@
 <!--Content-->
 <div class="grid-container">
     <!-- CSS Grid Container -->
+    {% for author in account_list %}
     <div class="grid-item">
-        <img src="{% static 'accounts/images/Alyssa.jpg' %}" alt="author_image">
-        <h3>Alyssa Cole</h3>
-        <h4>Member since: January 2014</h4>
-        <h5>Twitter: alyssacolelit</h5>
+        <img src="{{ author.picture.url }}" alt="author_image">
+        <h3>{{ author.first_name }} {{ author.last_name }}</h3>
+        <h4>Member since: {{ author.date_joined|date:'F d, Y' }}</h4>
         <p>Genre: Romance, Historical Fiction, Science Fiction</p>
     </div>
-
-    <div class="grid-item">
-        <img src="{% static 'accounts/images/Stephen.jpg' %}" alt="author_image">
-        <h3>Stephen King</h3>
-        <h4>Member Since: December 2013</h4>
-        <h5>Twitter: </h5>
-        <p>Genre: Horror, Mystery, Literature & Fiction</p>
-    </div>
-    {% endblock content %}
+    {% endfor %}
+</div>
+{% endblock content %}
