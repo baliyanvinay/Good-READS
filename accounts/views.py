@@ -44,3 +44,6 @@ class ProfileView(DetailView):
     DetailView will pick the pk from Url path and try to find the corresponding pk in model Account,
     Once found the object will be passed to template as 'object'
     '''
+
+    def get_object(self):
+        return Account.objects.get(username=self.kwargs.get("username"))
