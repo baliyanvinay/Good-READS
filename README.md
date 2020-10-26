@@ -1,15 +1,12 @@
 ## Problems: 
 - Absolute footer position is overlapped by CSS grid when there are more rows: Parked
-- Header does not highlight the active link; Need to active for the current page.
 - Form Invalid validation error does not display any error messages: Parked
 
 ## Enhancements:
-1. Authors - Authors shall be registered users but with isAuthor flag set to True; Only the authors shall be displayed on the author page. 
-2. Registered users can lend a book only if the shelf has a copy of the book available. 
-3. Registered users can add a book if they like and also can delete the ones they have added. 
-4. Admin user or Super user can add/remove a user/book from the admin panel.
-5. Registered user can view their profile and can make themselves author at any time. 
-6. Author can't be a user if there are books linked to him/her. Books must be deleted first. 
+- Registered users can lend a book only if the shelf has a copy of the book available. 
+- Registered users can add a book if they like and also can delete the ones they have added. 
+- Registered user can view their profile and can make themselves author at any time. 
+- Author can't be a user if there are books linked to him/her. Books must be deleted first. 
 
 # Good-READS
 Breakdown and build up project. To understand the working of Django forms, class based views, handling of static files and settings core functions.
