@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content%}
-
+<div class="wrapper">
+    <div class="left">
+        <img src="{{ object.picture.url }}" alt="">
+    </div>
+    <div class="right"></div>
+</div>
 <p>{{ object.first_name }}</p>
 <p>{{ object.last_name }}</p>
 {% endblock %}
