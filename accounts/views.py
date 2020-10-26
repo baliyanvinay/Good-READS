@@ -40,3 +40,7 @@ class AuthorsView(ListView):
 class ProfileView(DetailView):
     model = Account
     template_name = 'accounts/profile.html'
+    '''
+    DetailView will pick the pk from Url path and try to find the corresponding pk in model Account,
+    Once found the object will be passed to template as 'object'
+    '''

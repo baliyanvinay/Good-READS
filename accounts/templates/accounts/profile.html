@@ -1,8 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content%}
-<nav>
-    <a href="{% url 'profile_update' %}">Update Profile</a>
-</nav>
+
 <p>{{ object.first_name }}</p>
+<p>{{ object.last_name }}</p>
 {% endblock %}

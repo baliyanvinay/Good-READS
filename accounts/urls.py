@@ -9,7 +9,7 @@ urlpatterns = [
     path('', RedirectView.as_view(url='login/', permanent=True)),
     path('join/', JoinView.as_view(), name='join'),
     path('authors/', AuthorsView.as_view(), name='authors'),
-    path('profile/', ProfileView.as_view(), name='profile'),
+    path('profile/<int:pk>/', ProfileView.as_view(), name='profile'),
     path('login/', UserLoginView.as_view(), name='login'),
     path('logout/', UserLogoutView.as_view(), name='logout'),
 ]
