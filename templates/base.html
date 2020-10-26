@@ -21,19 +21,24 @@
             <h1>Good<span>READS</span></h1>
             <nav>
                 <ul>
-                    <li><a class="active_link" href="{% url 'books:index' %}">Home</a></li>
+                    <li><a {% if '/' == request.path %} class="active_link" {% endif %}
+                            href="{% url 'books:index' %}">Home</a></li>
                     {% if user.is_authenticated %}
                     <li><a href="#">My Books</a></li>
                     {% endif %}
-                    <li><a href="{% url 'accounts:authors' %}">Authors</a></li>
+                    <li><a {% if 'authors/' in request.path %} class="active_link" {% endif %}
+                            href="{% url 'accounts:authors' %}">Authors</a></li>
                     <li><a href="#">Search</a></li>
 
                     {% if user.is_authenticated %}
-                    <li><a href="{% url 'accounts:profile' user.username %}">Profile</a></li>
+                    <li><a {% if 'profile/' in request.path %} class="active_link" {% endif %}
+                            href="{% url 'accounts:profile' user.username %}">Profile</a></li>
                     <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
                     {% else %}
-                    <li><a href="{% url 'accounts:login' %}">Log In</a></li>
-                    <li><a href="{% url 'accounts:join' %}">Join</a></li>
+                    <li><a {% if 'login/' in request.path %} class="active_link" {% endif %}
+                            href="{% url 'accounts:login' %}">Log In</a></li>
+                    <li><a {% if 'join/' in request.path %} class="active_link" {% endif %}
+                            href="{% url 'accounts:join' %}">Join</a></li>
                     {% endif %}
                 </ul>
             </nav>

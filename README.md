@@ -1,10 +1,7 @@
 ## Problems: 
-1. CSS Grid is missing some property, does not cover whole page: Fixed
-2. Fontsize for the content is too small: Fixed
-3. Absolute footer position is overlapped by CSS grid when there are more rows: Parked
-4. Header does not highlight the active link; Need to active for the current page.
-5. Password fields in Account forms does not display placeholder: No solution found.
-6. Form Invalid validation error does not display any error messages: Parked
+- Absolute footer position is overlapped by CSS grid when there are more rows: Parked
+- Header does not highlight the active link; Need to active for the current page.
+- Form Invalid validation error does not display any error messages: Parked
 
 ## Enhancements:
 1. Authors - Authors shall be registered users but with isAuthor flag set to True; Only the authors shall be displayed on the author page. 
