@@ -10,7 +10,8 @@ class JoinForm(UserCreationForm):
                   'username', 'password1', 'password2', 'is_author', 'picture', ]
         exclude = []
         widgets = {
-            'first_name': forms.fields.TextInput(attrs={'placeholder': 'Enter First Name', 'autofocus': 'autofocus'}),
-            'last_name': forms.fields.TextInput(attrs={'placeholder': 'Enter Last Name'}),
-            'username': forms.fields.TextInput(attrs={'placeholder': 'Enter Username'}),
+            'first_name': forms.TextInput(attrs={'placeholder': 'Enter First Name', 'autofocus': 'autofocus'}),
+            'last_name': forms.TextInput(attrs={'placeholder': 'Enter Last Name'}),
+            'username': forms.TextInput(attrs={'placeholder': 'Enter Username'}),
+            'password1': forms.PasswordInput(attrs={'placeholder': 'Enter Username'}),
         }
