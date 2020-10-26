@@ -1,12 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content%}
-<div class="wrapper">
-    <div class="left">
-        <img src="{{ object.picture.url }}" alt="">
+<div class="profile">
+
+    <div class="item">
+        <img id='profile_img' src="{{ object.picture.url }}" alt="user_image">
     </div>
-    <div class="right"></div>
+
+    <div class="item">
+        <h3>Name: {{ object.get_full_name }} </h3>
+
+        <h4>Username: {{ object.get_username }} </h4>
+        <h4>Member Since: {{ object.date_joined|date:'F d, Y' }}</h4>
+        <h4>Author: {% if object.is_author %} Yes {% else %} No {% endif %}</h4>
+        <h4>Last Login: {{ object.last_login|date:'F d, Y' }}</h4>
+        <h4>Books: </h4>
+
+        <br>
+        <button style="width: 50%; margin-left: 50px;" type="submit">Update</button>
+    </div>
 </div>
-<p>{{ object.first_name }}</p>
-<p>{{ object.last_name }}</p>
+
 {% endblock %}
