@@ -21,11 +21,14 @@
             <nav>
                 <ul>
                     <li><a class="active_link" href="{% url 'books:index' %}">Home</a></li>
+                    {% if user.is_authenticated %}
                     <li><a href="#">My Books</a></li>
+                    {% endif %}
                     <li><a href="{% url 'accounts:authors' %}">Authors</a></li>
                     <li><a href="#">Search</a></li>
 
                     {% if user.is_authenticated %}
+                    <li><a href="{% url 'accounts:profile' %}">Profile</a></li>
                     <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
                     {% else %}
                     <li><a href="{% url 'accounts:login' %}">Log In</a></li>
