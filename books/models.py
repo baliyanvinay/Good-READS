@@ -26,7 +26,7 @@ class Book(models.Model):
     author = models.ForeignKey(Account, on_delete=models.SET_NULL, null=True)
     copies = models.IntegerField(default=1)
     date_added = models.DateField(default=now)
-    ratings = models.DecimalField(max_digits=3, decimal_places=2)
+    ratings = models.DecimalField(max_digits=3, decimal_places=2, default=0.0)
     short_desc = models.TextField(max_length=100)
     description = models.TextField(max_length=500)
     cover_picture = models.ImageField(upload_to='book_photos/')
