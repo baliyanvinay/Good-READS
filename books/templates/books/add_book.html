@@ -2,6 +2,48 @@
 
 {% block content %}
 
-{{ form.as_p }}
+<h2>Add a Book</h2>
+<div class="add_book">
+    {{ form.as_ul }}
 
+    <div class="clearfix" id='button_book'>
+        <button type="button" class="cancelbtn">Cancel</button>
+        <button type="submit" class="submitbtn">Create</button>
+    </div>
+</div>
+
+<!--Inline CSS added-->
+<style>
+    .add_book,
+    h2 {
+        font-family: 'Courier New';
+    }
+
+    .add_book {
+        margin: 80px;
+        margin-top: 1%;
+        margin-bottom: 1%;
+        border: 1px solid black;
+        padding: 5px;
+        box-shadow: 2px 2px 4px black;
+        font-size: larger;
+    }
+
+    h2 {
+        text-align: center;
+        margin-left: 80px;
+        margin-right: 80px;
+        padding-left: 30%;
+        margin-top: 1%;
+        margin-bottom: 1%;
+        background-color: burlywood;
+        color: brown;
+        box-shadow: 2px 2px 4px brown;
+    }
+
+    #button_book {
+        width: 50%;
+        margin-left: 20%;
+    }
+</style>
 {% endblock content %}
