@@ -2,13 +2,12 @@
 
 {% block content %}
 
-<h2>Add a Book</h2>
+<h2> Add Book Details</h2>
 <div class="add_book">
     {{ form.as_ul }}
 
     <div class="clearfix" id='button_book'>
-        <button type="button" class="cancelbtn">Cancel</button>
-        <button type="submit" class="submitbtn">Create</button>
+        <button type="submit" class="submitbtn">Add Book</button>
     </div>
 </div>
 
@@ -21,21 +20,19 @@
 
     .add_book {
         margin: 80px;
-        margin-top: 1%;
-        margin-bottom: 1%;
+        margin-top: 0.7%;
+        margin-bottom: 0%;
         border: 1px solid black;
         padding: 5px;
         box-shadow: 2px 2px 4px black;
-        font-size: larger;
+        font-size: medium;
     }
 
     h2 {
-        text-align: center;
-        margin-left: 80px;
-        margin-right: 80px;
-        padding-left: 30%;
-        margin-top: 1%;
-        margin-bottom: 1%;
+        text-align: right;
+        margin: 80px;
+        margin-top: 0.5%;
+        margin-bottom: 0.5%;
         background-color: burlywood;
         color: brown;
         box-shadow: 2px 2px 4px brown;
