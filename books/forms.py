@@ -5,5 +5,5 @@ from django.forms import ModelForm
 class BookForm(ModelForm):
     class Meta:
         model = Book
-        fields = '__all__'
-        exclude = ['date_added', 'copies']
+        fields = ('title', 'genre', 'author', 'short_desc',
+                  'description', 'ratings', 'cover_picture', 'copies', 'date_added')
