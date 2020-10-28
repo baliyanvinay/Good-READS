@@ -8,11 +8,14 @@
 {% block content %}
 
 <h2> Add Book Details</h2>
-<div class="add_book">
-    {{ form.as_ul }}
+<form method="POST" enctype="multipart/form-data">
+    <div class="add_book">
+        {% csrf_token %}
+        {{ form.as_ul }}
 
-    <div class="clearfix" id='button_book'>
-        <button type="submit" class="submitbtn">Add Book</button>
+        <div class="clearfix" id='button_book'>
+            <button type="submit" class="submitbtn">Add Book</button>
+        </div>
     </div>
-</div>
+</form>
 {% endblock content %}
