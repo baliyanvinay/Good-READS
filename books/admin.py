@@ -1,5 +1,10 @@
 from django.contrib import admin
 from books.models import Book, Genre
 
-admin.site.register(Book)
+
+class BookAdmin(admin.ModelAdmin):
+    list_display = ('title', 'author', 'ratings', 'date_added')
+
+
+admin.site.register(Book, BookAdmin)
 admin.site.register(Genre)
