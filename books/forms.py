@@ -5,8 +5,9 @@ from django.forms import ModelForm
 
 
 class BookForm(ModelForm):
-    authors = forms.ModelMultipleChoiceField(
-        queryset=Account.objects.filter(is_author=True))
+    # authors = forms.ModelMultipleChoiceField(queryset = Account.objects.filter(is_author=True))
+    authors = forms.ChoiceField(
+        choices=[(author.id, author.get_full_name) for author in Account.objects.filter(is_author=True)])
 
     class Meta:
         model = Book
