@@ -6,13 +6,6 @@
 {% endblock link %}
 {% block content %}
 
-<!-- If user has not added any book -->
-{% if False %}
-<div class="nobook">
-    <p>No books added</p>
-    <a class="body_link" href="{% url 'books:add_book' %}">Add Book>></a>
-</div>
-{% else %}
 <!-- When user has any book added -->
 <div class="grid-container">
     {{ book_list.length }}
@@ -27,8 +20,13 @@
         <p>{{ book.short_desc }}</p>
         <button>More</button>
     </div>
+    {% empty %}
+    <!-- If user has not added any book -->
+    <div id="no_book">
+        <p>No books added</p>
+        <a class="body_link" href="{% url 'books:add_book' %}">Add Book>></a>
+    </div>
     {% endfor %}
 </div>
-{% endif %}
 
 {% endblock content %}
