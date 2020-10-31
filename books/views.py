@@ -25,5 +25,5 @@ class MyBookView(ListView):
     '''
 
     def get_queryset(self):
-        queryset = Book.objects.filter(author=self.request.user)
+        queryset = Book.objects.filter(author=1)
         return queryset
