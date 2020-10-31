@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import TemplateView, CreateView
+from django.views.generic import TemplateView, CreateView, ListView
 
 from books.forms import BookForm
 
@@ -14,3 +14,7 @@ class BookAddView(CreateView):
     template_name = 'books/add_book.html'
     form_class = BookForm
     success_url = reverse_lazy('books:index')
+
+
+class MyBookView(ListView):
+    template_name = 'books/my_books.html'
