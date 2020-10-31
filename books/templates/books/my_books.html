@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'accounts/css/my_books.css' %}">
+{% endblock link %}
+{% block content %}
+
+<!-- If user has not added any book -->
+<div class="nobook">
+    <h2>No books added</h2>
+    <a href="{% url 'book:add_book' %}"></a>
+</div>
+
+<!-- When user has any book added -->
+
+{% endblock content %}
