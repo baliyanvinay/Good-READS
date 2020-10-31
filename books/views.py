@@ -3,6 +3,7 @@ from django.urls import reverse_lazy
 from django.views.generic import TemplateView, CreateView, ListView
 
 from books.forms import BookForm
+from books.models import Book
 
 
 class IndexView(TemplateView):
@@ -17,4 +18,12 @@ class BookAddView(CreateView):
 
 
 class MyBookView(ListView):
+    model = Book
     template_name = 'books/my_books.html'
+    '''
+    Filters out the books for the current logged user
+    '''
+
+    def get_queryset(self):
+        queryset = Book.objects.filter(author=self.request.user)
+        return queryset

@@ -7,11 +7,27 @@
 {% block content %}
 
 <!-- If user has not added any book -->
+{% if book_list is None %}
 <div class="nobook">
     <h2>No books added</h2>
-    <a href="{% url 'book:add_book' %}"></a>
+    <a href="{% url 'book:add_book' %}">Add Book>></a>
 </div>
-
+{% else %}
 <!-- When user has any book added -->
+<div class="grid-container">
+    <!-- CSS Grid Container -->
+    {% for book in book_list %}
+    <div class="grid-item">
+        <h4>{{ book.genre }}</h4>
+        <img src="{{ book.cover.url }}" alt="{{ book.title }}">
+        <h4>{{ book.title }}</h4>
+        <h5>by {{ book.author.get_full_name }}</h5>
+        <p>Rating: {{ book.ratings }}</p>
+        <p>{{ book.short_desc }}</p>
+        <button>More</button>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
 
 {% endblock content %}
