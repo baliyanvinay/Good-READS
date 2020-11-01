@@ -1,13 +1,13 @@
 ## Problems: 
 - Absolute footer position is overlapped by CSS grid when there are more rows: Parked
 - Form Invalid validation error does not display any error messages: Parked
+- Add Book Form displays all users for now; Should filter only the authors
 
 ## Enhancements:
 - Registered users can lend a book only if the shelf has a copy of the book available. 
 - Registered users can add a book if they like and also can delete the ones they have added. 
 - Registered user can view their profile and can make themselves author at any time. 
 - Author can't be a user if there are books linked to him/her. Books must be deleted first. 
-- Mybook should be displayed only when a user is logged in. Allows user to add new books and view the ones they had added.
 
 # Good-READS
 Breakdown and build up project. To understand the working of Django forms, class based views, handling of static files and settings core functions.

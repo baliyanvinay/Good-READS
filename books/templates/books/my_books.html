@@ -20,6 +20,11 @@
         <button>More</button>
     </div>
     {% endfor %}
+    <div class="grid-item">
+        <button>
+            <a href="{% url 'books:add_book' %}">Add Book</a>
+        </button>
+    </div>
 </div>
 
 {% endblock content %}
