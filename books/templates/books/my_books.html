@@ -8,7 +8,6 @@
 
 <!-- When user has any book added -->
 <div class="grid-container">
-    {{ book_list.length }}
     <!-- CSS Grid Container -->
     {% for book in book_list %}
     <div class="grid-item">
@@ -19,12 +18,6 @@
         <p>Rating: {{ book.ratings }}</p>
         <p>{{ book.short_desc }}</p>
         <button>More</button>
-    </div>
-    {% empty %}
-    <!-- If user has not added any book -->
-    <div id="no_book">
-        <p>No books added</p>
-        <a class="body_link" href="{% url 'books:add_book' %}">Add Book>></a>
     </div>
     {% endfor %}
 </div>

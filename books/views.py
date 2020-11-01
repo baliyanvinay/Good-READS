@@ -25,7 +25,7 @@ class MyBookView(ListView):
     '''
 
     def get_queryset(self):
-        queryset = Book.objects.filter(author=0)
+        queryset = Book.objects.filter(author=self.request.user)
         return queryset
 
     def get(self, request, *agrs, **kwargs):
@@ -36,6 +36,7 @@ class MyBookView(ListView):
         '''
         self.object_list = self.get_queryset()
         if not self.object_list:
-            return redirect('https://www.google.com')
+            # Redirect to add_book when querySet is empty| Meaning when no data
+            return redirect('books:add_book')
         context = self.get_context_data()
         return self.render_to_response(context)
