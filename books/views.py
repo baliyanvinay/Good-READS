@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, CreateView, ListView
 
@@ -25,5 +25,17 @@ class MyBookView(ListView):
     '''
 
     def get_queryset(self):
-        queryset = Book.objects.filter(author=self.request.user)
+        queryset = Book.objects.filter(author=0)
         return queryset
+
+    def get(self, request, *agrs, **kwargs):
+        '''
+        Get to check if queryset is empty- 
+        Yes: Redirect to add_book url 
+        No: Display my_books
+        '''
+        self.object_list = self.get_queryset()
+        if not self.object_list:
+            return redirect('https://www.google.com')
+        context = self.get_context_data()
+        return self.render_to_response(context)
