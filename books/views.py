@@ -10,6 +10,7 @@ class IndexView(ListView):
     # Main index page view
     template_name = 'books/index.html'
     model = Book
+    ordering = ['-id']
 
 
 class BookAddView(CreateView):
