@@ -25,7 +25,8 @@
                     <li><a {% if '/' == request.path %} class="active_link" {% endif %}
                             href="{% url 'books:index' %}">Home</a></li>
                     {% if user.is_authenticated %}
-                    <li><a href="{% url 'books:my_books' %}">My Books</a></li>
+                    <li><a {% if 'my_books' in request.path %} class="active_link" {% endif %}
+                            href="{% url 'books:my_books' %}">My Books</a></li>
                     {% endif %}
                     <li><a {% if 'authors/' in request.path %} class="active_link" {% endif %}
                             href="{% url 'accounts:authors' %}">Authors</a></li>
