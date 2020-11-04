@@ -17,7 +17,9 @@
         <h4>Books: </h4>
 
         <br>
-        <button style="width: 50%; margin-left: 50px;" type="submit">Update</button>
+        <button style="width: 50%; margin-left: 50px;" type="submit">
+            <a href="{% url 'accounts:profile_update' object.get_username %}">Update</a>
+        </button>
     </div>
 </div>
 

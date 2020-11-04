@@ -5,7 +5,11 @@
 <!-- Sign Up Section -->
 <form method="POST" enctype="multipart/form-data">
     <div class="signup_div">
+        {% if user.is_authenticated %}
+        <h2 id="text_center">Update Account</h2>
+        {% else %}
         <h2 id="text_center">Create Account</h2>
+        {% endif %}
         <p>Please fill in this form to create an account.</p>
         <hr>
         {% csrf_token %}
@@ -22,7 +26,11 @@
 
         <div class="clearfix">
             <button type="button" class="cancelbtn">Cancel</button>
+            {% if user.is_authenticated %}
+            <button type="submit" class="submitbtn">Update</button>
+            {% else %}
             <button type="submit" class="submitbtn">Create</button>
+            {% endif %}
         </div>
     </div>
 </form>

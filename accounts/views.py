@@ -1,5 +1,5 @@
 from django.urls import reverse_lazy
-from django.views.generic import TemplateView, FormView, ListView, DetailView
+from django.views.generic import TemplateView, FormView, ListView, DetailView, UpdateView
 from django.contrib.auth.views import LoginView, LogoutView
 from accounts.forms import JoinForm
 from accounts.models import Account
@@ -44,6 +44,21 @@ class ProfileView(DetailView):
     DetailView will pick the pk from Url path and try to find the corresponding pk in model Account,
     Once found the object will be passed to template as 'object'
     '''
+    # DetailView looks for pk or slug| Changed to look for username using get_object method
 
     def get_object(self):
         return Account.objects.get(username=self.kwargs.get("username"))
+
+
+class ProfileUpdateView(UpdateView):
+    template_name = 'accounts/signup.html'
+    model = Account
+    form_class = JoinForm
+
+    # by default the updateview looks for pk or slug to get current_object| passing username to url dispather
+    def get_object(self):
+        return Account.objects.get(username=self.kwargs.get("username"))
+
+    # get_success_url needs to be added to pass username as kwargs to url dispather
+    def get_success_url(self):
+        return reverse_lazy('accounts:profile', kwargs={'username': self.kwargs.get('username')})
