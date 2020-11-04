@@ -14,7 +14,11 @@
         {{ form.as_ul }}
 
         <div class="clearfix" id='button_book'>
+            {% if form.title %}
+            <button type="submit" class="submitbtn">Update Book</button>
+            {% else %}
             <button type="submit" class="submitbtn">Add Book</button>
+            {% endif %}
         </div>
     </div>
 </form>

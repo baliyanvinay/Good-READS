@@ -17,7 +17,9 @@
         <h5>by {{ book.author.get_full_name }}</h5>
         <p>Rating: {{ book.ratings }}</p>
         <p>{{ book.short_desc }}</p>
-        <button>More</button>
+        <button>
+            <a href="{% url 'books:update_book' book.id %}">Edit</a>
+        </button>
     </div>
     {% endfor %}
     <div class="grid-item">

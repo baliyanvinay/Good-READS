@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, reverse
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView, ListView, UpdateView
 
 from books.forms import BookForm
 from books.models import Book
@@ -42,3 +42,10 @@ class MyBookView(ListView):
             return redirect('books:add_book')
         context = self.get_context_data()
         return self.render_to_response(context)
+
+
+class BookUpdateView(UpdateView):
+    model = Book
+    template_name = 'books/add_book.html'
+    form_class = BookForm
+    success_url = reverse_lazy('books:my_books')
