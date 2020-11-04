@@ -1,14 +1,15 @@
 from django.shortcuts import render, redirect, reverse
 from django.urls import reverse_lazy
-from django.views.generic import TemplateView, CreateView, ListView
+from django.views.generic import CreateView, ListView
 
 from books.forms import BookForm
 from books.models import Book
 
 
-class IndexView(TemplateView):
+class IndexView(ListView):
     # Main index page view
     template_name = 'books/index.html'
+    model = Book
 
 
 class BookAddView(CreateView):
