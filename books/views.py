@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, reverse
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, ListView, UpdateView
+from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 
 from books.forms import BookForm
 from books.models import Book
@@ -49,3 +49,12 @@ class BookUpdateView(UpdateView):
     template_name = 'books/add_book.html'
     form_class = BookForm
     success_url = reverse_lazy('books:my_books')
+
+
+class BookDeleteView(DeleteView):
+    model = Book
+    success_url = reverse_lazy('books:my_books')
+
+    # Get request method is changed to use post directly skipping the _confirm_delete template
+    def get(self, request, *args, **kwargs):
+        return self.post(request, *args, **kwargs)

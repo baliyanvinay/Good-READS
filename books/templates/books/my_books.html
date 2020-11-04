@@ -20,6 +20,13 @@
         <button>
             <a href="{% url 'books:update_book' book.id %}">Edit</a>
         </button>
+
+        <form method="POST" action="{% url 'books:delete_book' book.id %}">
+            {% csrf_token %}
+            <button type="submit">
+                <a href="{% url 'books:delete_book' book.id %}">Delete</a>
+            </button>
+        </form>
     </div>
     {% endfor %}
     <div class="grid-item">
