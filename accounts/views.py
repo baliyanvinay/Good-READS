@@ -1,6 +1,7 @@
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, FormView, ListView, DetailView, UpdateView
 from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from accounts.forms import JoinForm
 from accounts.models import Account
 
@@ -37,7 +38,7 @@ class AuthorsView(ListView):
         return Account.objects.filter(is_author=True)
 
 
-class ProfileView(DetailView):
+class ProfileView(LoginRequiredMixin, DetailView):
     model = Account
     template_name = 'accounts/profile.html'
     '''
@@ -50,7 +51,7 @@ class ProfileView(DetailView):
         return Account.objects.get(username=self.kwargs.get("username"))
 
 
-class ProfileUpdateView(UpdateView):
+class ProfileUpdateView(LoginRequiredMixin, UpdateView):
     template_name = 'accounts/signup.html'
     model = Account
     form_class = JoinForm
