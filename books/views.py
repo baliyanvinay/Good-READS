@@ -11,6 +11,8 @@ class IndexView(ListView):
     template_name = 'books/index.html'
     model = Book
     ordering = ['-id']
+    # Pagination
+    paginate_by = 8
 
 
 class BookAddView(CreateView):
