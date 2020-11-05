@@ -2,6 +2,7 @@
 - Absolute footer position is overlapped by CSS grid when there are more rows: Parked
 - Form Invalid validation error does not display any error messages: Parked
 - Add Book Form displays all users for now; Should filter only the authors
+- Authenticated user can view other's profile & can updated their profile. 
 
 ## Enhancements:
 - Registered users can lend a book only if the shelf has a copy of the book available. 
