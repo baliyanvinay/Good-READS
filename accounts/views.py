@@ -48,7 +48,14 @@ class ProfileView(LoginRequiredMixin, DetailView):
     # DetailView looks for pk or slug| Changed to look for username using get_object method
 
     def get_object(self):
-        return Account.objects.get(username=self.kwargs.get("username"))
+        '''
+        Used self.request.user.username in place of self.kwargs.get("username") to get
+        the current logged in user all the time. So if user wants to access someone's else
+        profile, user will always get his/her profile. 
+        '''
+        # print(self.request.user.username)
+        # print(self.kwargs.get('username'))
+        return Account.objects.get(username=self.request.user.username)
 
 
 class ProfileUpdateView(LoginRequiredMixin, UpdateView):
