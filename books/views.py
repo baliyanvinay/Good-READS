@@ -71,5 +71,8 @@ class SearchView(TemplateView):
                 'book_list': Book.objects.filter(title__contains=search_book),
             }
             return render(request, template_name='books/search_book.html', context=search_data)
+        # when the page is loaded first time|TemplateView class to handle get request
         return super().get(request)
 
+class BookRentView(TemplateView):
+    pass
