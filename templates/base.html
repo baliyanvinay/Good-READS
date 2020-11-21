@@ -30,7 +30,7 @@
                     {% endif %}
                     <li><a {% if 'authors/' in request.path %} class="active_link" {% endif %}
                             href="{% url 'accounts:authors' %}">Authors</a></li>
-                    <li><a href="#">Search</a></li>
+                    <li><a href="{% url 'books:search' %}">Search</a></li>
 
                     {% if user.is_authenticated %}
                     <li><a {% if 'profile/' in request.path %} class="active_link" {% endif %}
