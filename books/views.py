@@ -62,4 +62,12 @@ class BookDeleteView(DeleteView):
         return self.post(request, *args, **kwargs)
 
 class SearchView(TemplateView):
-    template_name='books/search_book.html'
+    template_name = 'books/search_book.html'
+
+    def get(self, request):
+        search_book = request.GET.get('book')
+        search_data={
+            'search_results': Book.objects.filter(title__contains=search_book),
+        }
+        return render(request, template_name='books/search_book.html', context=search_data)
+
