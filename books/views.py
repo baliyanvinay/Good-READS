@@ -65,9 +65,11 @@ class SearchView(TemplateView):
     template_name = 'books/search_book.html'
 
     def get(self, request):
-        search_book = request.GET.get('book')
-        search_data={
-            'book_list': Book.objects.filter(title__contains=search_book),
-        }
-        return render(request, template_name='books/search_book.html', context=search_data)
+        if request.GET.get('book'):
+            search_book = request.GET.get('book')
+            search_data={
+                'book_list': Book.objects.filter(title__contains=search_book),
+            }
+            return render(request, template_name='books/search_book.html', context=search_data)
+        return super().get(request)
 
