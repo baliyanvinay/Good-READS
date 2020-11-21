@@ -75,4 +75,20 @@ class SearchView(TemplateView):
         return super().get(request)
 
 class BookRentView(TemplateView):
-    pass
+    '''
+    Inherited from IndexView which inherits from ListView. So no need to define a separate template for
+    this view. 
+    '''
+    def get(self, request, pk):
+        book=Book.objects.get(id=pk)
+        print(book.copies)
+        if book.copies>=1:
+            book.copies-=1 # book is rented
+        else:
+            pass
+            # what happens when book.copies goes to zero| Should not be available for rent. 
+        print(book.copies)
+        book.save()
+        print(book.copies)
+        return reverse_lazy('books:index')
+        
