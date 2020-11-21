@@ -17,8 +17,8 @@
         </div>
     </div>
 </form>
-{% if search_results %}
-<p>{{ search_results }}</p>
-{% endif %}
+
+<br>
+{% include 'books/_display_book.html' %}
 
 {% endblock content %}

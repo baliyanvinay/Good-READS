@@ -1,0 +1,13 @@
+<div class="grid-container">
+    <!-- CSS Grid Container -->
+    {% for book in book_list %}
+    <div class="grid-item">
+        <h4>{{ book.display_genre }}</h4>
+        <img src="{{ book.cover_picture.url }}" alt="{{ book.title }}">
+        <h4>{{ book.title }}</h4>
+        <h5>by {{ book.author.get_full_name }}</h5>
+        <p>Rating: {{ book.ratings }}</p>
+        <p>{{ book.short_desc }}</p>
+    </div>
+    {% endfor %}
+</div>
