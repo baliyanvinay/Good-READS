@@ -5,7 +5,7 @@ from django.views.generic import TemplateView, CreateView, ListView, UpdateView,
 from books.forms import BookForm
 from books.models import Book
 
-
+from django.views.generic.edit import FormMixin
 class IndexView(ListView):
     # Main index page view
     template_name = 'books/index.html'
@@ -14,6 +14,11 @@ class IndexView(ListView):
     # Pagination
     paginate_by = 8
 
+    def get(self, request):
+        # Calling rent_book function to sort out calculation of renting book
+        if(request.GET.get('book_Id')):
+            rent_book(request.GET.get('book_Id'))
+        return super().get(request)
 
 class BookAddView(CreateView):
     template_name = 'books/add_book.html'
@@ -74,21 +79,13 @@ class SearchView(TemplateView):
         # when the page is loaded first time|TemplateView class to handle get request
         return super().get(request)
 
-class BookRentView(TemplateView):
-    '''
-    Inherited from IndexView which inherits from ListView. So no need to define a separate template for
-    this view. 
-    '''
-    def get(self, request, pk):
-        book=Book.objects.get(id=pk)
-        print(book.copies)
-        if book.copies>=1:
-            book.copies-=1 # book is rented
-        else:
-            pass
-            # what happens when book.copies goes to zero| Should not be available for rent. 
-        print(book.copies)
-        book.save()
-        print(book.copies)
-        return reverse_lazy('books:index')
-        
+
+def rent_book(book_id):
+    book=Book.objects.get(id=book_id)
+    if book.copies>=1:
+        book.copies-=1 # book is rented
+    else:
+        # what happens when book.copies goes to zero| Should not be available for rent. 
+        # add a message that book can't be rented
+        pass
+    book.save()
